@@ -20,6 +20,13 @@ public void draw()
   sayo.show();
   for(int r = 0; r < kim.length - 1; r++){
    kim[r].show(); 
+    for (int r = bird.size() - 1; r >= 0; r--) {
+      Asteroid asteroid = asteroids.get(r);
+      float distance = dist((float) bird.getCenterX(), (float) bird.getCenterY()
+       
+      if (distance <= 10) {
+        asteroids.remove(r);
+    }
   }
 }
 void keyPressed(){
