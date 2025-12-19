@@ -4,12 +4,12 @@ public void setup()
 {
   size(500,500);
   kim = new Star[100];
-  ArrayList<Integer> bird = new Asteroid<Integer>(5);
+  ArrayList<Object> bird = new ArrayList<Object>(5);
   for(int r = 0; r < 100; r++){
   kim[r] = new Star();
   }
   for(int r = 0; r < 5; r++){
-    
+    bird.add(
     }
   }
 public void draw() 
