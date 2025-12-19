@@ -5,4 +5,12 @@ class Bullet extends Floater {
     myColor = 255;
     accelerate(6.6);
   }
+  public double getCenterX() 
+  {
+    return myCenterX;
+  }
+  public double getCenterY() 
+  {
+    return myCenterY;
+  }
 }
