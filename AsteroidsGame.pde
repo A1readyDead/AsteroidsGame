@@ -1,6 +1,6 @@
 Spaceship sayo = new Spaceship();
 Star[] kim;
-  ArrayList<Object> bird;
+  ArrayList<Asteroid> bird;
 public void setup() 
 {
   size(500,500);
