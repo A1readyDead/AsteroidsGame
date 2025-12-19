@@ -1,5 +1,5 @@
 class Asteroid extends Floater {
-  public double GetX, GetY;
+  public double getX, getY;
   public Asteroid(){
     corners = 6;
     xCorners = new int[corners];
@@ -29,7 +29,7 @@ class Asteroid extends Floater {
   }
   public void get()
   {
-    GetX = myCenterX;
-    GetY = myCenterY;
+    getX = myCenterX;
+    getY = myCenterY;
   }
 }
