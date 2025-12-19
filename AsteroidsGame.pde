@@ -1,21 +1,25 @@
 Spaceship sayo = new Spaceship();
-Star[] kim = new Star[150];
+Star[] kim;
 public void setup() 
 {
   size(500,500);
   kim = new Star[100];
+  ArrayList<Integer> bird = new Asteroid<Integer>(5);
   for(int r = 0; r < 100; r++){
   kim[r] = new Star();
   }
-}
+  for(int r = 0; r < 5; r++){
+    
+    }
+  }
 public void draw() 
 {
   background(0);
-  for(int r = 0; r < kim.length - 1; r++){
-    kim[r].show();
-  }
   sayo.move();
   sayo.show();
+  for(int r = 0; r < kim.length - 1; r++){
+   kim[r].show(); 
+  }
 }
 void keyPressed(){
   if(key == 'w'){
