@@ -1,17 +1,20 @@
 Spaceship sayo = new Spaceship();
 Star[] kim;
-  ArrayList<Asteroid> bird;
+ArrayList<Asteroid> bird;
+ArrayList <Bullet> bullets;
 public void setup() 
 {
   size(500,500);
   kim = new Star[100];
   bird = new ArrayList<Object>(5);
+  bullets = new ArrayList <Bullet>();
   for(int r = 0; r < 100; r++){
   kim[r] = new Star();
   }
-  for(int r = 0; r < 5; r++){
+  for(int r = 0; r < 10; r++){
     bird.add(new Asteroid());
     }
+  
   }
 public void draw() 
 {
@@ -20,12 +23,18 @@ public void draw()
   sayo.show();
   for(int r = 0; r < kim.length - 1; r++){
    kim[r].show(); 
+    }
+   for (int i = bullets.size() - 1; i >= 0; i--) {
+    Bullet bullet = bullets.get(i);
+    bullet.show();
+    bullet.move();
     for (int r = bird.size() - 1; r >= 0; r--) {
       Asteroid asteroid = asteroids.get(r);
-      float distance = dist((float) bird.getCenterX(), (float) bird.getCenterY()
+      float distance = dist((float) bird.getCenterX(), (float) bird.getCenterY(), (float) bullet.getCenterX(), (float) bullet.getCenterY());
        
       if (distance <= 10) {
-        asteroids.remove(r);
+        bird.remove(r);
+        bird.add(new Asteroid());
     }
   }
 }
@@ -48,5 +57,8 @@ void keyPressed(){
    sayo.myCenterX = (int)(Math.random()*501);
    sayo.myCenterY = (int)(Math.random()*501);
    sayo.myPointDirection = (int)(Math.random()*361);
+  }
+  if(key == ' '){
+    bullets.add(new Bullet(ship));
   }
 }
