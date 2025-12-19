@@ -6,7 +6,7 @@ public void setup()
 {
   size(500,500);
   kim = new Star[100];
-  bird = new ArrayList<Object>(5);
+  bird = new ArrayList<Asteroid>(5);
   bullets = new ArrayList <Bullet>();
   for(int r = 0; r < 100; r++){
   kim[r] = new Star();
@@ -29,12 +29,13 @@ public void draw()
     bullet.show();
     bullet.move();
     for (int r = bird.size() - 1; r >= 0; r--) {
-      Asteroid asteroid = asteroids.get(r);
-      float distance = dist((float) bird.getCenterX(), (float) bird.getCenterY(), (float) bullet.getCenterX(), (float) bullet.getCenterY());
+      Asteroid bird = bird.get(r);
+      float distance = dist((float) bird.getX(), (float) bird.getY(), (float) bullet.getCenterX(), (float) bullet.getCenterY());
        
       if (distance <= 10) {
         bird.remove(r);
         bird.add(new Asteroid());
+      }
     }
   }
 }
@@ -59,6 +60,7 @@ void keyPressed(){
    sayo.myPointDirection = (int)(Math.random()*361);
   }
   if(key == ' '){
-    bullets.add(new Bullet(ship));
+    bullets.add(new Bullet(sayo));
   }
+ 
 }
