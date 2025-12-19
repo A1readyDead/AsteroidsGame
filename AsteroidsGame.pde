@@ -30,7 +30,7 @@ public void draw()
     bullet.move();
     for (int r = bird.size() - 1; r >= 0; r--) {
       Asteroid bird = bird.get(r);
-      float distance = dist((float) bird.getX(), (float) bird.getY(), (float) bullet.getCenterX(), (float) bullet.getCenterY());
+      float distance = dist((float) bird.getX, (float) bird.getY, (float) bullet.getCenterX(), (float) bullet.getCenterY());
        
       if (distance <= 10) {
         bird.remove(r);
