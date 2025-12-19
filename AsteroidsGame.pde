@@ -1,15 +1,16 @@
 Spaceship sayo = new Spaceship();
 Star[] kim;
+  ArrayList<Object> bird;
 public void setup() 
 {
   size(500,500);
   kim = new Star[100];
-  ArrayList<Object> bird = new ArrayList<Object>(5);
+  bird = new ArrayList<Object>(5);
   for(int r = 0; r < 100; r++){
   kim[r] = new Star();
   }
   for(int r = 0; r < 5; r++){
-    bird.add(
+    bird.add(new Asteroid());
     }
   }
 public void draw() 
